@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <script src="https://test-nbe.gateway.mastercard.com/checkout/version/59/checkout.js" data-error="error callback"
+        data-cancel="cancel callback">
+        </script>
+    <script type="text/javascript">
+
+        function errorCallback(error) {
+            console.log(JSON.stringify(error));
+        }
+        function cancelCallback() {
+            console.log('Payment cancelled');
+        }
+        function completeCallback() {
+            console.log('Payment completed');
+        }
+        Checkout.configure({
+            session: {
+                id: '<%- data1 %>'
+            },
+            order: {
+                amount: 100,
+                currency: 'EGP',
+                description: 'Ordered goods',
+                id: 56582,
+            },
+            interaction: {
+                operation: 'PURCHASE',
+                merchant: {
+                    name: 'NBE Test',
+                    address: {
+                        line1: '200 Sample St',
+                        line2: '1234 Example Town'
+                    }
+                }
+            },
+        });
+
+    </script>
+
+</head>
+
+<body>
+
+    <script>Checkout.showPaymentPage();</script>
+</body>
+
+</html>

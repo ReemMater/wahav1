@@ -1,0 +1,57 @@
+{
+  "name": "client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "react-scripts start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@glidejs/glide": "^3.4.1",
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
+    "@react-icons/all-files": "^4.1.0",
+    "axios": "^0.21.1",
+    "bootstrap": "^4.6.0",
+    "bootstrap-icons": "^1.4.1",
+    "jss-rtl": "^0.3.0",
+    "node-fetch": "^2.6.1",
+    "react": "^17.0.2",
+    "react-bootstrap": "^1.5.2",
+    "react-bootstrap-icons": "^1.4.0",
+    "react-dom": "^17.0.2",
+    "react-hooks": "^1.0.1",
+    "react-icons": "^4.2.0",
+    "react-id-swiper": "^4.0.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^4.0.3",
+    "react-slick": "^0.28.1",
+    "react-slick-carousel": "^0.14.9",
+    "react-spring": "^9.1.2",
+    "slick-carousel": "^1.8.1",
+    "swiper": "^6.5.8",
+    "uuid": "^8.3.2",
+    "velocity-react": "^1.4.3"
+  },
+  "extends": [
+    "react-hooks"
+  ],
+  "plugins": [
+    "react-hooks"
+  ],
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
