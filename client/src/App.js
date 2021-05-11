@@ -22,62 +22,85 @@ import PaymentFail from './components/ar/payment/PaymentFail';
 import PaymentSuccess from './components/ar/payment/PaymentSuccess';
 import OnlinePayment from './components/ar/payment/OnlinePayment';
 import AlwahaNewsAr from './components/ar/alwahanews/AlwahaNewsAr';
+import Login from './components/admin/Login';
+import AlertState from './context/alert/AlertStete';
+import AuthState from './context/auth/AuthState';
+import Admin from './components/admin/Admin';
+import PrivateRoute from './components/routing/PrivateRoute';
+import setAuthToken from './utilts/setAuthToken';
 
+
+
+if (localStorage.token) {
+  setAuthToken(localStorage.token);
+}
 const App = () => {
+
   return (
-    <Router>
 
-      <Switch>  <Route exact path="/">
-        <Redirect to="/ar" />
-      </Route>
-        <Route exact path="/ar">
-          <AppAr />
-        </Route>
-        <Route exact path="/en">
-          <AppEn />
-        </Route>
+    <AlertState>
+      <AuthState>
+        <Router>
+
+          <Switch>  <Route exact path="/">
+            <Redirect to="/ar" />
+          </Route>
+            <Route exact path="/ar">
+              <AppAr />
+            </Route>
+            <Route exact path="/en">
+              <AppEn />
+            </Route>
 
 
-        <Route exact path="/ar/about">
-          <AboutAr />
-        </Route>
-        <Route exact path="/ar/gallery">
-          <GalleryAr />
-        </Route>
-        <Route exact path="/ar/services">
-          <ServicesAr />
-        </Route>
-        <Route exact path="/ar/contact">
-          <ContactAr />
-        </Route>
-        <Route exact path="/ar/alwahaNews">
-          <AlwahaNewsAr />
-        </Route>
-        <Route exact path="/ar/paymentfail">
-          <PaymentFail />
-        </Route>
-        <Route exact path="/ar/paymentsuccess">
-          <PaymentSuccess />
-        </Route>
-        <Route exact path="/ar/payment">
-          <OnlinePayment />
-        </Route>
+            <PrivateRoute exact path="/admin/login" component={Login} />
 
-        <Route exact path="/en/about">
-          <AboutEn />
-        </Route>
-        <Route exact path="/en/gallery">
-          <GalleryEn />
-        </Route>
-        <Route exact path="/en/services">
-          <ServicesEn />
-        </Route>
-        <Route exact path="/en/contact">
-          <ContactEn />
-        </Route>
+            <PrivateRoute exact path={"/Admin"} component={Admin} />
 
-      </Switch>
-    </Router>
+
+            <Route exact path="/ar/about">
+              <AboutAr />
+            </Route>
+            <Route exact path="/ar/gallery">
+              <GalleryAr />
+            </Route>
+            <Route exact path="/ar/services">
+              <ServicesAr />
+            </Route>
+            <Route exact path="/ar/contact">
+              <ContactAr />
+            </Route>
+            <Route exact path="/ar/alwahaNews">
+              <AlwahaNewsAr />
+            </Route>
+            <Route exact path="/ar/paymentfail">
+              <PaymentFail />
+            </Route>
+            <Route exact path="/ar/paymentsuccess">
+              <PaymentSuccess />
+            </Route>
+            <Route exact path="/ar/payment">
+              <OnlinePayment />
+            </Route>
+
+            <Route exact path="/en/about">
+              <AboutEn />
+            </Route>
+            <Route exact path="/en/gallery">
+              <GalleryEn />
+            </Route>
+            <Route exact path="/en/services">
+              <ServicesEn />
+            </Route>
+            <Route exact path="/en/contact">
+              <ContactEn />
+            </Route>
+
+          </Switch>
+        </Router>
+      </AuthState>
+    </AlertState>
+
   );
 };
 

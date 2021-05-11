@@ -4,101 +4,102 @@ import Nav from 'react-bootstrap/Nav';
 import 'velocity-react';
 
 
-var svg = $('.curtain');
-var path = svg.find('.bir1'); // define svg path
-var open = true;
-
-function handlerIn() {
-  // mouse enter
-  if (open) {
-    $(".bir1").velocity({ stroke: '#21F', opacity: 0 }, { duration: 350 });
-    $(".bir2").velocity({ stroke: '#21F', opacity: 0 }, { duration: 350 });
-    $(".bir11").velocity({ stroke: '#21F', opacity: 1 }, { duration: 350 });
-    $(".bir21").velocity({ stroke: '#21F', opacity: 1 }, { duration: 350 });
-    $(".x1").velocity({ stroke: '#010032', opacity: 0 });
-    $(".x2").velocity({ stroke: '#010032', opacity: 0 })
-    $(".iki").velocity({ stroke: '#21F', opacity: 1 });
-    $(".uc").velocity({ stroke: '#010032' })
-  }
-  else {
-    $(".bir1").velocity({ stroke: '#21F', opacity: 0 });
-    $(".bir2").velocity({ stroke: '#21F', opacity: 0 });
-    $(".bir11").velocity({ stroke: '#21F', opacity: 0 });
-    $(".bir21").velocity({ stroke: '#21F', opacity: 0 });
-    $(".x1").velocity({ stroke: '#005', opacity: 1 });
-    $(".x2").velocity({ stroke: '#005', opacity: 1 })
-    $(".iki").velocity({ stroke: '#21F', opacity: 0 });
-    $(".uc").velocity({ stroke: '#010032' })
-
-  }
-
-
-}
-function handlerOut() {
-  // mouse exit
-  // mouse enter
-  if (open) {
-    $(".bir1").velocity({ stroke: '#010032', opacity: 1 });
-    $(".bir2").velocity({ stroke: '#010032', opacity: 1 });
-    $(".bir11").velocity({ stroke: '#010032', opacity: 0 });
-    $(".bir21").velocity({ stroke: '#010032', opacity: 0 });
-    $(".x1").velocity({ stroke: '#010032', opacity: 0 });
-    $(".x2").velocity({ stroke: '#010032', opacity: 0 })
-    $(".iki").velocity({ stroke: '#010032', opacity: 1 });
-    $(".uc").velocity({ stroke: '#010032' })
-  }
-  else {
-    $(".bir1").velocity({ stroke: '#21F', opacity: 0 });
-    $(".bir2").velocity({ stroke: '#21F', opacity: 0 });
-    $(".bir11").velocity({ stroke: '#21F', opacity: 0 });
-    $(".bir21").velocity({ stroke: '#21F', opacity: 0 });
-    $(".x1").velocity({ stroke: '#fff', opacity: 1 });
-    $(".x2").velocity({ stroke: '#fff', opacity: 1 })
-    $(".iki").velocity({ stroke: '#fff', opacity: 0 });
-    $(".uc").velocity({ stroke: '#fff' })
-  }
-
-};
-function handlerClick() { // mouse click
-  if (open) {
-    $(".bir1").velocity({ stroke: '#010032', opacity: 0 });
-    $(".bir11").velocity({ stroke: '#010032', opacity: 0 });
-    $(".iki").velocity({ stroke: '#010032', opacity: 0 });
-    $(".bir2").velocity({ stroke: '#010032', opacity: 0 });
-    $(".bir21").velocity({ stroke: '#010032', opacity: 0 });
-    $(".x1").velocity({ stroke: '#010032', opacity: 1 });
-    $(".x2").velocity({ stroke: '#010032', opacity: 1 });
-    $(".uc").velocity({ stroke: '#999' });
-    document.getElementById("mySidenav").style.width = "250px";
-    open = false;
-  }
-  else {
-    $(".bir1").velocity({ stroke: '#010032', opacity: 1 });
-    $(".bir11").velocity({ stroke: '#010032', opacity: 0 });
-    $(".iki").velocity({ stroke: '#010032', opacity: 1 });
-    $(".bir2").velocity({ stroke: '#010032', opacity: 1 });
-    $(".bir21").velocity({ stroke: '#010032', opacity: 0 });
-    $(".x1").velocity({ stroke: '#010032', opacity: 0 });
-    $(".x2").velocity({ stroke: '#010032', opacity: 0 });
-    $(".uc").velocity({ stroke: '#999' }, { duration: 350 });
-    document.getElementById("mySidenav").style.width = "0";
-    open = true;
-  }
-};
-
-function handleMousePos(event) {
-  var mouseClickWidth = event.clientX;
-  if (mouseClickWidth >= 270) {
-    document.getElementById("mySidenav").style.width = "0";
-    open = true;
-    handlerOut();
-  }
-}
-
-document.addEventListener("click", handleMousePos);
 
 
 const Sidemenu = () => {
+  var svg = $('.curtain');
+  var path = svg.find('.bir1'); // define svg path
+  var open = true;
+
+  function handlerIn() {
+    // mouse enter
+    if (open) {
+      $(".bir1").velocity({ stroke: '#21F', opacity: 0 }, { duration: 350 });
+      $(".bir2").velocity({ stroke: '#21F', opacity: 0 }, { duration: 350 });
+      $(".bir11").velocity({ stroke: '#21F', opacity: 1 }, { duration: 350 });
+      $(".bir21").velocity({ stroke: '#21F', opacity: 1 }, { duration: 350 });
+      $(".x1").velocity({ stroke: '#010032', opacity: 0 });
+      $(".x2").velocity({ stroke: '#010032', opacity: 0 })
+      $(".iki").velocity({ stroke: '#21F', opacity: 1 });
+      $(".uc").velocity({ stroke: '#010032' })
+    }
+    else {
+      $(".bir1").velocity({ stroke: '#21F', opacity: 0 });
+      $(".bir2").velocity({ stroke: '#21F', opacity: 0 });
+      $(".bir11").velocity({ stroke: '#21F', opacity: 0 });
+      $(".bir21").velocity({ stroke: '#21F', opacity: 0 });
+      $(".x1").velocity({ stroke: '#005', opacity: 1 });
+      $(".x2").velocity({ stroke: '#005', opacity: 1 })
+      $(".iki").velocity({ stroke: '#21F', opacity: 0 });
+      $(".uc").velocity({ stroke: '#010032' })
+
+    }
+
+
+  }
+  function handlerOut() {
+    // mouse exit
+    // mouse enter
+    if (open) {
+      $(".bir1").velocity({ stroke: '#010032', opacity: 1 });
+      $(".bir2").velocity({ stroke: '#010032', opacity: 1 });
+      $(".bir11").velocity({ stroke: '#010032', opacity: 0 });
+      $(".bir21").velocity({ stroke: '#010032', opacity: 0 });
+      $(".x1").velocity({ stroke: '#010032', opacity: 0 });
+      $(".x2").velocity({ stroke: '#010032', opacity: 0 })
+      $(".iki").velocity({ stroke: '#010032', opacity: 1 });
+      $(".uc").velocity({ stroke: '#010032' })
+    }
+    else {
+      $(".bir1").velocity({ stroke: '#21F', opacity: 0 });
+      $(".bir2").velocity({ stroke: '#21F', opacity: 0 });
+      $(".bir11").velocity({ stroke: '#21F', opacity: 0 });
+      $(".bir21").velocity({ stroke: '#21F', opacity: 0 });
+      $(".x1").velocity({ stroke: '#fff', opacity: 1 });
+      $(".x2").velocity({ stroke: '#fff', opacity: 1 })
+      $(".iki").velocity({ stroke: '#fff', opacity: 0 });
+      $(".uc").velocity({ stroke: '#fff' })
+    }
+
+  };
+  function handlerClick() { // mouse click
+    if (open) {
+      $(".bir1").velocity({ stroke: '#010032', opacity: 0 });
+      $(".bir11").velocity({ stroke: '#010032', opacity: 0 });
+      $(".iki").velocity({ stroke: '#010032', opacity: 0 });
+      $(".bir2").velocity({ stroke: '#010032', opacity: 0 });
+      $(".bir21").velocity({ stroke: '#010032', opacity: 0 });
+      $(".x1").velocity({ stroke: '#010032', opacity: 1 });
+      $(".x2").velocity({ stroke: '#010032', opacity: 1 });
+      $(".uc").velocity({ stroke: '#999' });
+      document.getElementById("mySidenav").style.width = "250px";
+      open = false;
+    }
+    else {
+      $(".bir1").velocity({ stroke: '#010032', opacity: 1 });
+      $(".bir11").velocity({ stroke: '#010032', opacity: 0 });
+      $(".iki").velocity({ stroke: '#010032', opacity: 1 });
+      $(".bir2").velocity({ stroke: '#010032', opacity: 1 });
+      $(".bir21").velocity({ stroke: '#010032', opacity: 0 });
+      $(".x1").velocity({ stroke: '#010032', opacity: 0 });
+      $(".x2").velocity({ stroke: '#010032', opacity: 0 });
+      $(".uc").velocity({ stroke: '#999' }, { duration: 350 });
+      document.getElementById("mySidenav").style.width = "0";
+      open = true;
+    }
+  };
+
+  function handleMousePos(event) {
+    var mouseClickWidth = event.clientX;
+    if (mouseClickWidth >= 270) {
+      document.getElementById("mySidenav").style.width = "0";
+      open = true;
+      handlerOut();
+    }
+  }
+
+  document.addEventListener("click", handleMousePos);
+
   return (
     <div>
       <div className="togggleouter">

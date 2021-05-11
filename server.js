@@ -1,12 +1,25 @@
 const express = require('express');
+const connectDB = require('./config/db');
 
 const path = require('path');
 
 const app = express();
+//connect database
 
+connectDB();
+
+//init middleware
+app.use(express.json({ extended: false }));
+
+//Define Routes
+
+app.use('/api/users', require('./routes/users'));
+app.use('/api/auth', require('./routes/auth'));
+//app.use('/api/question', require('./routes/questions'));
 
 const axios_1 = require("axios")
 app.set('view engine', 'ejs')
+
 
 //init middleware
 app.use(express.json({ extended: false }));
@@ -87,7 +100,7 @@ if (process.env.NODE_ENV === 'production') {
         req.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
     });
 }
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8000;
 
 app.listen(PORT, () => {
     console.log(`server start in ${PORT}`);
